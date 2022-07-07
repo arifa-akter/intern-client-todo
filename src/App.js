@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Header from './component/Header';
+import SignUp from "./component/Users/SignUp";
+import SignIn from "./component/Users/SignIn";
+import ToDoAdd from "./component/ToDo/ToDoAdd";
+import CategoryAdd from "./component/Category/CategoryAdd";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Header></Header>
+      <Routes>
+      <Route path="/" element={<SignUp></SignUp>}></Route>
+      <Route path="/signIn" element={<SignIn></SignIn>}></Route>
+      <Route path="/addTodo" element={<ToDoAdd></ToDoAdd>}></Route>
+      <Route path="/categoryAdd" element={<CategoryAdd></CategoryAdd>}></Route>
+      </Routes>
+   
     </div>
   );
 }
